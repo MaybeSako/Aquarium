@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block header %}
+<head>
+  <title>Sample App</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="icon" type="image/png" href="src/sample/static/img/logo_transparent.png">
+</head>
+
+<header>
+  <div class='navbar'>
+    <div><h2>Aquarium</h2></div>
+    <div class='serch_area'></div>
+    <nav>
+      <ul>
+        <li class='tab'>Explore</li>
+        <li class='tab'>Stats</li>
+        <li class='tab'>Resources</li>
+        <li class='tab'>Create</li>
+        <li class='icon'><img src="src/sample/static/img/profile_icon.png"></li>
+        <li class='icon'><img src="src/sample/static/img/profile_icon.png"></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+{% endblock %}

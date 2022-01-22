@@ -13,6 +13,7 @@ services:
       - 8000:8000
     volumes:
       - ./src:/code
+      - ./nginx/shopify/src/sample/static:/static
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
     working_dir: /code
