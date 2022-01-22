@@ -21,7 +21,7 @@ services:
 
   app:
     build: ./python
-    command: uwsgi --socket :8001 --module shopify_mock.wsgi --py-autoreload 1 --logto /tmp/tmp.log
+    command: uwsgi --socket :8001 --module project.wsgi --py-autoreload 1 --logto /tmp/tmp.log
     volumes:
       - ./src:/code
     expose:
