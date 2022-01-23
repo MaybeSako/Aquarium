@@ -1,4 +1,5 @@
 .env
 .DS_Store
 .vsls.json
-src/shopify_mock/__pycache__
+src/project/__pycache__
+src/sample/__pycache__

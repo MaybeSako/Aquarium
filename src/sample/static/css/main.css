@@ -1,18 +1,31 @@
 header {
   display: flex;
   width: 100%;
-  height: 100px;
-  background-color: darkgrey;
+  height: 10%;
+  background-color: blue;
   align-items: center;
+  position: fixed;
 }
 
 .title {
-  margin-right: auto;
-  color: rgb(243, 0, 0);
+  padding: 8% 35% 5% 3%;
+  display: inline-block;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.nav {
+  color: rgb(255, 255, 255);
 }
 
 .tab {
   list-style: none;
   display: inline-block;
-  padding: 10px;
+  padding: 0 5px;
+}
+
+img {
+  width: 3em;
 }
