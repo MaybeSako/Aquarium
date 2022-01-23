@@ -1,5 +1,4 @@
 .env
 .DS_Store
 .vsls.json
-src/project/__pycache__
-src/sample/__pycache__
+__pycache__/
