@@ -1,0 +1,259 @@
+/*--------------------------------------
+  カード型
+--------------------------------------*/
+.aq-wrapper{
+  width: 430px;
+  margin: auto;
+}
+.aq-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 34px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  transition: all .5s;
+}
+.aq-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  margin:2%;
+}
+.aq-card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.aq-card-content {
+  padding: 8px 20px 20px;
+}
+.aq-card-title {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: 700;
+}
+.aq-card-text {
+  color: #777;
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin-bottom: 0.2em;
+}
+.aq-card-link {
+  text-align: right;
+  border-top: 1px solid #eee;
+  padding: 1em 0.5em;
+}
+.aq-card-link a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #4f96f6;
+}
+.aq-card-link a:hover {
+  color: #6bb6ff;
+}
+
+.aq-card-content p {
+  margin-bottom:0;
+}
+
+.aq-card-img-small{
+  max-width: 5%;
+  height: auto; 
+}
+
+/* ドロップダウンリスト */
+.float-right{
+  padding: 2% 0.75%;
+}
+.dropdown:hover > .dropdown-menu{
+  display: block;
+}
+
+/* サイドバー */
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.sidebar-wrap{
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #f5f5f5;
+  color: #343434;
+  transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+  transform-origin: bottom left;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+  transform: rotateY(100deg);
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+#sidebar ul p {
+  color: #343434;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  color: #343434;
+}
+#sidebar ul li a:hover {
+  color: #f5f5f5;
+  background: #343434;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #343434;
+  background: #f5f5f5;
+}
+
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+  content: '\e259';
+  display: block;
+  position: absolute;
+  right: 20px;
+  font-family: 'Glyphicons Halflings';
+  font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+  content: '\e260';
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #f5f5f5;
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+a.download {
+  background: #343434;
+  color: #f5f5f5;
+}
+
+a.article, a.article:hover {
+  background: #f5f5f5 !important;
+  color: #343434 !important;
+}
+
+/* ---------------------------------------------------
+  CONTENT STYLE
+----------------------------------------------------- */
+#content {
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+#sidebarCollapse {
+  width: 40px;
+  height: 40px;
+  background: #f5f5f5;
+}
+
+#sidebarCollapse span {
+  width: 80%;
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  background: #555;
+  transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+  transition-delay: 0.2s;
+}
+
+#sidebarCollapse span:first-of-type {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+#sidebarCollapse span:nth-of-type(2) {
+  opacity: 0;
+}
+#sidebarCollapse span:last-of-type {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+  transform: none;
+  opacity: 1;
+  margin: 5px auto;
+}
+
+
+/* ---------------------------------------------------
+  MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+      transform: rotateY(90deg);
+  }
+  #sidebar.active {
+      margin-left: 0;
+      transform: none;
+  }
+  #sidebarCollapse span:first-of-type,
+  #sidebarCollapse span:nth-of-type(2),
+  #sidebarCollapse span:last-of-type {
+      transform: none;
+      opacity: 1;
+      margin: 5px auto;
+  }
+  #sidebarCollapse.active span {
+      margin: 0 auto;
+  }
+  #sidebarCollapse.active span:first-of-type {
+      transform: rotate(45deg) translate(2px, 2px);
+  }
+  #sidebarCollapse.active span:nth-of-type(2) {
+      opacity: 0;
+  }
+  #sidebarCollapse.active span:last-of-type {
+      transform: rotate(-45deg) translate(1px, -1px);
+  }
+}
+
+/* Search Area & Icon 検索バー*/
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.7rem;
+  height: 2.7rem;
+  line-height: 2.7rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}

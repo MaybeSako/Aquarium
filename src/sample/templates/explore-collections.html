@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap-theme.min.css">
+    
+    <!-- Other CSS -->
+    <link rel="stylesheet" href="../static/css/explore-collections.css">
+    <link rel="icon" type="image/png" href="../static/img/logo_transparent.png">
+    <link rel="icon" type="image/png" href="../static/img/logo_transparent.png">
+
+      <title>Sample App</title>
+    {% block header %}
+      <div style="display: none;">
+        {% include 'header.html' %}
+      </div>
+    {% endblock header %}
+  </head>
+  <body>
+    <div class="sidebar-wrap">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Bootstrap Sidebar</h3>
+        </div>
+        <ul class="list-unstyled components">
+          <p>Dummy Heading</p>
+          <li>
+            <a href="#">About</a>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li><a href="#">Page 1</a></li>
+              <li><a href="#">Page 2</a></li>
+              <li><a href="#">Page 3</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="list-unstyled CTAs">
+          <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to the article</a></li>
+        </ul>
+      </nav>
+      <!-- <p>5,000,000items</p> -->
+      <!-- Sidebar Holder -->
+      <div class="card-deck">
+        <button type="button" id="sidebarCollapse" class="navbar-btn col-1" style="color: black;"></button>
+        <div class="col-11 sort-bar">
+          <div class="float-right">
+            <button class="btn" type="button" aria-haspopup="true" aria-expanded="false">
+              <ion-icon name="grid" size="medium"></ion-icon> ｜
+              <ion-icon name="apps-sharp"></ion-icon>
+            </button>
+          </div>
+          <div class="dropdown float-right">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Items
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">All Items</a>
+              <a class="dropdown-item" href="#">Bundles</a>
+            </div>
+          </div>
+          <div class="dropdown float-right">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Recently Listed</a>
+              <a class="dropdown-item" href="#">Recently Created</a>
+              <a class="dropdown-item" href="#">Recently Sold</a>
+              <a class="dropdown-item" href="#">Recently Received</a>
+              <a class="dropdown-item" href="#">Ending Soon</a>
+              <a class="dropdown-item" href="#">Price: Low to High</a>
+              <a class="dropdown-item" href="#">Price: High to Low</a>
+              <a class="dropdown-item" href="#">Highest Last Sale</a>
+              <a class="dropdown-item" href="#">Most Viewed</a>
+              <a class="dropdown-item" href="#">Most Favorited</a>
+              <a class="dropdown-item" href="#">Oldest</a>
+            </div>
+          </div>
+          <div class="item-float-left float-right">
+            <div class="form-group has-search">
+              <span class="fa fa-search form-control-feedback"><ion-icon name="search-outline"></ion-icon></span>
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+          </div>
+        </div>
+        {% with ''|center:9 as range %}
+        {% for _ in range %}
+        <div class="aq-wrapper">
+          <div class="aq-card">
+            <img class="aq-card-img" src="https://japan.cnet.com/storage/2021/12/06/00e03e0679670d0d87124399e996b08b/t/584/438/d/richerd_1280x960.jpg" alt="">
+            <div class="aq-card-content">
+              <p class="aq-card-title">イケてるNFT</p>
+              <p class="aq-card-text">これはいけてるNFTです</p>
+            </div>
+            <div class="aq-card-link">
+              <img class="aq-card-img-small" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiPWpc-5iU1wPVYdLssDHLhy7CSWVGJoVnqg&usqp=CAU" alt="good">
+              <a href="#">99いいね</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% endwith %}
+      </div>
+    </div>
+
+    <!-- Bootstrap Javascript(jQuery含む) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="../static/js/explore-collections.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
