@@ -5,3 +5,7 @@ from django.http import HttpResponse
 def index(request):
     #とりあえず文字列を返す。
     return render(request, 'index.html')
+
+def login(request):
+    #とりあえず文字列を返す。
+    return render(request, 'login.html')
