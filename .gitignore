@@ -2,3 +2,4 @@
 .DS_Store
 .vsls.json
 __pycache__/
+.vscode/
