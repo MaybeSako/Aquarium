@@ -4,5 +4,5 @@ from sample import views
 app_name = 'sample'
 urlpatterns = [
     re_path('login/', views.login, name='login'),
-    re_path('', views.index, name='index'),
+    re_path('', views.index, name='index'), # http://localhost:8000/sample/
 ]
