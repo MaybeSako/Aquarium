@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+{% load static %}
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/signup.css">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
     <title>Create your Aquarium Account</title>
 </head>
 
 <body>
     <div class="signup-pane">
         <div class="title-logo-wrapper">
-            <a href="#"> <img src="../static/img/logo_transparent.png" width="20%" height="20%"></a>
+            <a href="{% url 'sample:index' %}"> <img src="{% static 'img/logo_transparent.png' %}"></a>
         </div>
-        <h2>Create your Aquarium Acccount</h2>
+        <h2>Create your Account</h2>
         <form action="" method="post">
             <input class="input-field" type="text" value="${ param.loginInfo }" placeholder="Email">
             <input class="input-field" type="password" value="${ param.password }" placeholder="Password"
@@ -29,14 +29,13 @@
             <table class="button-table">
                 <tbody>
                     <tr>
-                        <td><button class="signup-button" type="submit" name="buttonId" value="L001_01">Create</button>
-                        </td>
+                        <td><a class="button" href="">Create</a></td>
                     </tr>
                 </tbody>
             </table>
-            <table id="sign-in-isntead">
+            <table id="login-isntead">
                 <tr>
-                    <td><a href="#" style="text-decoration: none;">Sign in instead</a></td>
+                    <td><a href="{% url 'sample:login' %}" id="login-isntead-link">Login instead</a></td>
                 </tr>
             </table>
         </form>
