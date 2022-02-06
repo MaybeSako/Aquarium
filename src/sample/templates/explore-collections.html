@@ -1,20 +1,17 @@
+{% load static %}
 <!doctype html>
 <html lang="ja">
   <head>
-    {% load static %}
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     
     <!-- Other CSS -->
-    <link rel="stylesheet" href="../static/css/explore-collections.css">
-    <link rel="icon" type="image/png" href="../static/img/logo_transparent.png">
-    <link rel="icon" type="image/png" href="../static/img/logo_transparent.png">
-
+    <link rel="stylesheet" href="{% static 'css/explore-collections.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/logo_transparent.png' %}">
       <title>Sample App</title>
     {% block header %}
       <div style="display: none;">
@@ -26,28 +23,82 @@
     <div class="sidebar-wrap">
       <nav id="sidebar">
         <div class="sidebar-header">
-          <h3>Bootstrap Sidebar</h3>
+          <button type="button" class="sidebarCollapse sidebar-filter-btn filter-parent d-flex bd-highlight">
+            <div class="bd-highlight">
+              <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 24px;">
+                <path xmlns="http://www.w3.org/2000/svg" d="M4 7C4 6.44772 4.44772 6 5 6H19C19.5523 6 20 6.44772 20 7C20 7.55228 19.5523 8 19 8H5C4.44772 8 4 7.55228 4 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM8 17C8 16.4477 8.44772 16 9 16H15C15.5523 16 16 16.4477 16 17C16 17.5523 15.5523 18 15 18H9C8.44772 18 8 17.5523 8 17Z" fill="#0D0D0D"></path>
+              </svg>
+            </div>
+            <div class="bd-highlight"><b>Filter</b></div>
+            <div class="ml-auto bd-highlight"><img class="sidebar-btn-right" src="{% static 'img/arrow-right.png' %}"><img class="sidebar-btn-left" src="{% static 'img/arrow-left.png' %}">
+            </div>
+          </button>
+          <div class="filter-parent sidebar-btn-left">
+            <div class="filter-status"><b>Status</b></div>
+            <div class="filter-status-child filter-child">
+              <button type="button" class="btn btn-outline-secondary col-5 filter-status-child-btn">Buy Now</button>
+              <button type="button" class="btn btn-outline-secondary col-5 filter-status-child-btn">On Auction</button>
+              <button type="button" class="btn btn-outline-secondary col-5 filter-status-child-btn">New</button>
+              <button type="button" class="btn btn-outline-secondary col-5 filter-status-child-btn">Has Offers</button>
+            </div>
+          </div>
+          <div class="filter-parent sidebar-btn-left">
+            <div class="filter-price"><b>Price</b></div>
+            <div class="filter-child">
+              <div class="filter-price-child">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  United States Dollar（USD）
+                </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">United States Dollar（USD）</a>
+                    <a class="dropdown-item" href="#">Ether（ETH）</a>
+                  </div>
+              </div>
+              <div class="filter-price-child">
+                <form>
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Min">
+                    </div>
+                    <p style="margin: auto;">to</p>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Max">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="filter-price-child">
+                <button type="button" class="btn btn-outline-secondary col-5">Apply</button>
+              </div>
+            </div>
+          </div>
+          <div class="filter-parent sidebar-btn-left">
+            <div class="filter-chains"><b>Chains</b></div>
+            <div class="filter-chains-child filter-child">
+              <ul>
+                <li>Ethereum</li>
+                <li>Polygon</li>
+                <li>Klaytn</li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-parent sidebar-btn-left">
+            <div class="filter-on-sale"><b>On Sale In</b></div>
+            <div class="filter-on-sale-child filter-child">
+              <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                ETH
+              </div>
+              <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                WETH
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="list-unstyled components">
-          <p>Dummy Heading</p>
-          <li>
-            <a href="#">About</a>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-            <ul class="collapse list-unstyled" id="pageSubmenu">
-              <li><a href="#">Page 1</a></li>
-              <li><a href="#">Page 2</a></li>
-              <li><a href="#">Page 3</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="list-unstyled CTAs">
-          <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to the article</a></li>
-        </ul>
       </nav>
-      <!-- <p>5,000,000items</p> -->
-      <!-- Sidebar Holder -->
-      <div class="card-deck">
-        <button type="button" id="sidebarCollapse" class="navbar-btn col-1" style="color: black;"></button>
+      
+      <div class="card-deck aq-card-deck">
         <div class="col-11 sort-bar">
           <div class="float-right">
             <button class="btn" type="button" aria-haspopup="true" aria-expanded="false">
@@ -56,17 +107,8 @@
             </button>
           </div>
           <div class="dropdown float-right">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Items
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">All Items</a>
-              <a class="dropdown-item" href="#">Bundles</a>
-            </div>
-          </div>
-          <div class="dropdown float-right">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sort
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort by
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Recently Listed</a>
@@ -80,6 +122,15 @@
               <a class="dropdown-item" href="#">Most Viewed</a>
               <a class="dropdown-item" href="#">Most Favorited</a>
               <a class="dropdown-item" href="#">Oldest</a>
+            </div>
+          </div>
+          <div class="dropdown float-right">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              All items
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">All Items</a>
+              <a class="dropdown-item" href="#">Bundles</a>
             </div>
           </div>
           <div class="item-float-left float-right">
@@ -112,7 +163,7 @@
     <!-- Bootstrap Javascript(jQuery含む) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <!-- Javascript -->
     <script type="text/javascript" src="../static/js/explore-collections.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

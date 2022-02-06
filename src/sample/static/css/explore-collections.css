@@ -1,8 +1,11 @@
 /*--------------------------------------
   カード型
 --------------------------------------*/
+.aq-card-deck{
+  margin:auto;
+}
 .aq-wrapper{
-  width: 430px;
+  width: 380px;
   margin: auto;
 }
 .aq-wrapper:hover {
@@ -62,7 +65,7 @@
 .float-right{
   padding: 2% 0.75%;
 }
-.dropdown:hover > .dropdown-menu{
+.float-right:hover > .dropdown-menu{
   display: block;
 }
 
@@ -77,8 +80,8 @@
 }
 
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 240px;
+  max-width: 240px;
   background: #f5f5f5;
   color: #343434;
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
@@ -86,12 +89,10 @@
 }
 
 #sidebar.active {
-  margin-left: -250px;
-  transform: rotateY(100deg);
+  margin-left: -180px;
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
   background: #f5f5f5;
 }
 
@@ -121,6 +122,14 @@
   background: #f5f5f5;
 }
 
+.sidebar-filter-btn{
+  width: 100%;
+  margin: 0;
+}
+
+.sidebar-btn-right{
+  display: none;
+}
 
 a[data-toggle="collapse"] {
   position: relative;
@@ -166,6 +175,28 @@ a.article, a.article:hover {
   color: #343434 !important;
 }
 
+.filter-parent{
+  user-select: none;
+  padding: 11px 0px 11px 7px;
+  border-bottom: 1px solid;
+  border-color: #777;
+}
+
+.filter-child{
+  margin: 4px 5px;
+}
+.filter-status-child-btn{
+  text-align: left;
+  margin: 4px 5px;
+  padding: 6px 4px;
+}
+.filter-price-child > .dropdown-toggle{
+  font-size: 0.8rem;
+}
+.filter-price-child{
+  margin: 9px 12px 9px 0px;
+}
+
 /* ---------------------------------------------------
   CONTENT STYLE
 ----------------------------------------------------- */
@@ -175,13 +206,18 @@ a.article, a.article:hover {
   transition: all 0.3s;
 }
 
-#sidebarCollapse {
-  width: 40px;
-  height: 40px;
+.sidebarCollapse {
   background: #f5f5f5;
+  display: block;
+  margin: 0;
+  border-color: transparent;
+  border: 0 solid;
+  padding-right: 15px;
+  border-bottom: 1px solid;
+  border-color: #777;
 }
 
-#sidebarCollapse span {
+.sidebarCollapse span {
   width: 80%;
   height: 2px;
   margin: 0 auto;
@@ -191,52 +227,54 @@ a.article, a.article:hover {
   transition-delay: 0.2s;
 }
 
-#sidebarCollapse span:first-of-type {
+.sidebarCollapse span:first-of-type {
   transform: rotate(45deg) translate(2px, 2px);
 }
-#sidebarCollapse span:nth-of-type(2) {
+.sidebarCollapse span:nth-of-type(2) {
   opacity: 0;
 }
-#sidebarCollapse span:last-of-type {
+.sidebarCollapse span:last-of-type {
   transform: rotate(-45deg) translate(1px, -1px);
 }
 
-#sidebarCollapse.active span {
+.sidebarCollapse.active span {
   transform: none;
   opacity: 1;
   margin: 5px auto;
 }
 
+.sidebarCollapse.active{
+  border-bottom: 0px solid;
+}
 
 /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
-  #sidebar {
-      margin-left: -250px;
-      transform: rotateY(90deg);
-  }
   #sidebar.active {
-      margin-left: 0;
+      min-width: 180px;
+      max-width: 180px;
+      margin-left: -125px;
       transform: none;
   }
-  #sidebarCollapse span:first-of-type,
-  #sidebarCollapse span:nth-of-type(2),
-  #sidebarCollapse span:last-of-type {
+
+  .sidebarCollapse span:first-of-type,
+  .sidebarCollapse span:nth-of-type(2),
+  .sidebarCollapse span:last-of-type {
       transform: none;
       opacity: 1;
       margin: 5px auto;
   }
-  #sidebarCollapse.active span {
+  .sidebarCollapse.active span {
       margin: 0 auto;
   }
-  #sidebarCollapse.active span:first-of-type {
+  .sidebarCollapse.active span:first-of-type {
       transform: rotate(45deg) translate(2px, 2px);
   }
-  #sidebarCollapse.active span:nth-of-type(2) {
+  .sidebarCollapse.active span:nth-of-type(2) {
       opacity: 0;
   }
-  #sidebarCollapse.active span:last-of-type {
+  .sidebarCollapse.active span:last-of-type {
       transform: rotate(-45deg) translate(1px, -1px);
   }
 }
