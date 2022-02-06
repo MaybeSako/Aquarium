@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/signup.css">
+    <title>Create your Aquarium Account</title>
+</head>
+
+<body>
+    <div class="signup-pane">
+        <div class="title-logo-wrapper">
+            <a href="#"> <img src="../static/img/logo_transparent.png" width="20%" height="20%"></a>
+        </div>
+        <h2>Create your Aquarium Acccount</h2>
+        <form action="" method="post">
+            <input class="input-field" type="text" value="${ param.loginInfo }" placeholder="Email">
+            <input class="input-field" type="password" value="${ param.password }" placeholder="Password"
+                maxlength="15">
+            <input class="input-field" type="password_confirm" value="${ param.password }" placeholder="Confirm"
+                maxlength="15">
+            <div class="error-filed">
+                <c:out value="${ requestScope.errorMessage }" />
+                <c:forEach var="messageList" items="${ requestScope.errorMessageList }">
+                    <c:out value="${ messageList }" />
+                    <br>
+                </c:forEach>
+            </div>
+            <table class="button-table">
+                <tbody>
+                    <tr>
+                        <td><button class="signup-button" type="submit" name="buttonId" value="L001_01">Create</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="sign-in-isntead">
+                <tr>
+                    <td><a href="#" style="text-decoration: none;">Sign in instead</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

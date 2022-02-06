@@ -2,21 +2,20 @@
 <html>
     <head>
       <title>Sample App</title>
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link rel="stylesheet" href="../static/css/main.css">
-      <link rel="icon" type="image/png" href="../static/img/logo_transparent.png">
-      <link rel="icon" type="image/png" href="../static/img/logo_transparent.png">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap-theme.min.css">
+
     </head>
     {% include 'header.html' %}
     {% block header %}
     {% endblock header %}
 一覧を表示する予定
 
-  <body>
+  <body style="background-color: rgb(48, 51, 56); color: white">
     <h1>とりあえずのコンテンツ</h1>
     <h2>h2の文字です</h2>
     <p>pの文字です</p>
+    <img src="{% static 'img/logo_transparent.png' %}">
     <h1><a href="https://google.com">Google</a></h1>
   </body>
 </html>
