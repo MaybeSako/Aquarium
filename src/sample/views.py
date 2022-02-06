@@ -9,3 +9,7 @@ def index(request):
 def login(request):
     #とりあえず文字列を返す。
     return render(request, 'login.html')
+
+def explore_collections(request):
+    #とりあえず文字列を返す。
+    return render(request, 'explore-collections.html')
