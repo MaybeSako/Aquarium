@@ -30,8 +30,6 @@ class Signup(CreateView):
         form = UserCreateForm(request.POST)
         return  render(request, 'signup.html', {'form': form,})
 
-create_account = Signup.as_view()
-
 class Login(View):
     def post(self, request, *arg, **kwargs):
         form = LoginForm(data=request.POST)
@@ -45,8 +43,6 @@ class Login(View):
     def get(self, request, *args, **kwargs):
         form = LoginForm(request.POST)
         return render(request, 'login.html', {'form': form,})
-
-account_login = Login.as_view()
 
 class Logout(LogoutView):
     template_name = "sample/index.html"
