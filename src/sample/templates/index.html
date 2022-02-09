@@ -9,13 +9,15 @@
     {% include 'header.html' %}
     {% block header %}
     {% endblock header %}
-一覧を表示する予定
 
   <body style="background-color: rgb(48, 51, 56); color: white">
-    <h1>とりあえずのコンテンツ</h1>
-    <h2>h2の文字です</h2>
-    <p>pの文字です</p>
-    <img src="{% static 'img/logo_transparent.png' %}">
-    <h1><a href="https://google.com">Google</a></h1>
+    {% if user.id  %}
+    <p>ログインしました．</p>
+    <p>こんにちは，{{ user.username }}さん</p>
+    <a href="{% url 'sample:logout' %}">ログアウトする</a>
+    {% else %}
+    <a href="{% url 'sample:login' %}">ログイン</a>
+    <a href="{% url 'sample:signup' %}">アカウント作成</a>
+    {% endif %}
   </body>
 </html>
