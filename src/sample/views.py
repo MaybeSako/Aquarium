@@ -12,10 +12,6 @@ def index(request):
     #とりあえず文字列を返す。
     return render(request, 'index.html')
 
-# def login(request):
-#     #とりあえず文字列を返す。
-#     return render(request, 'login.html')
-
 class Signup(CreateView):
     def post(self, request, *args, **kwargs):
         form = UserCreateForm(data=request.POST)
@@ -54,3 +50,7 @@ account_login = Login.as_view()
 
 class Logout(LogoutView):
     template_name = "sample/index.html"
+    
+def explore_collections(request):
+    #とりあえず文字列を返す。
+    return render(request, 'explore-collections.html')
