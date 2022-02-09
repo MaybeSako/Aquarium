@@ -13,8 +13,19 @@
             <a href="{% url 'sample:index' %}"> <img src="{% static 'img/logo_transparent.png' %}"></a>
         </div>
         <h2>Login</h2>
-        <form action="" method="post">
-            <input class="input-field" type="text" name="loginInfo" value="" placeholder="Email">
+        {% if form.errors  %}
+        <p>ユーザーID, パスワードが一致しません．</p>
+        {% endif %}
+        <form action="{% url 'sample:login' %}" method="POST">
+            {% csrf_token %}
+            <label style="color: white">ユーザーID</label>
+            {{ form.username }}
+            {{ form.username.errors }}
+            <label style="color: white">パスワード</label>
+            {{ form.password }}
+            {{ form.password.errors }}
+            <button type = "submit">ログイン</button>
+            <!-- <input class="input-field" type="text" name="loginInfo" value="" placeholder="Email">
             <input class="input-field" type="password" name="password" value="" placeholder="Password" maxlength="15">
             <div class="error-filed">
                 <c:out value="${ requestScope.errorMessage }" />
@@ -22,7 +33,7 @@
                     <c:out value="${ messageList }" />
                     <br>
                 </c:forEach>
-            </div>
+            </div> -->
             <table class="button-table">
                 <tbody>
                     <tr>
@@ -33,11 +44,11 @@
                     </tr>
                 </tbody>
             </table>
-            <table id="forgot-password">
+            <!-- <table id="forgot-password">
                 <tr>
                     <td><a href="" id="forgot-password-link">Forgot email or password?</a></td>
                 </tr>
-            </table>
+            </table> -->
         </form>
     </div>
 </body>

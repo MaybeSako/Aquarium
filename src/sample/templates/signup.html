@@ -13,8 +13,8 @@
             <a href="{% url 'sample:index' %}"> <img src="{% static 'img/logo_transparent.png' %}"></a>
         </div>
         <h2>Create your Account</h2>
-        <form action="" method="post">
-            <input class="input-field" type="text" value="${ param.loginInfo }" placeholder="Email">
+        <form action="{% url 'sample:signup' %}" method="POST">
+            <!-- <input class="input-field" type="text" value="${ param.loginInfo }" placeholder="Email">
             <input class="input-field" type="password" value="${ param.password }" placeholder="Password"
                 maxlength="15">
             <input class="input-field" type="password_confirm" value="${ param.password }" placeholder="Confirm"
@@ -25,8 +25,19 @@
                     <c:out value="${ messageList }" />
                     <br>
                 </c:forEach>
-            </div>
-            <table class="button-table">
+            </div> -->
+            {% csrf_token %}
+            <label style="color: white">ユーザーID</label>
+            {{ form.username }}
+            {{ form.username.errors }}
+            <label style="color: white">パスワード</label>
+            {{ form.password1 }}
+            {{ form.password1.errors }}
+            <label style="color: white">パスワード(確認)</label>
+            {{ form.password2 }}
+            {{ form.password2.errors }}
+            <button type="submit">登録</button>
+            <!-- <table class="button-table">
                 <tbody>
                     <tr>
                         <td><a class="button" href="">Create</a></td>
@@ -37,7 +48,7 @@
                 <tr>
                     <td><a href="{% url 'sample:login' %}" id="login-isntead-link">Login instead</a></td>
                 </tr>
-            </table>
+            </table> -->
         </form>
     </div>
 </body>
