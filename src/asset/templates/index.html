@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+    <head>
+      <title>Sample App</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap-theme.min.css">
+
+    </head>
+    {% include 'header.html' %}
+    {% block header %}
+    {% endblock header %}
+
+  <body style="background-color: rgb(48, 51, 56); color: white">
+    {% if user.id  %}
+    <p>ログインしました．</p>
+    <p>こんにちは，{{ user.username }}さん</p>
+    <a href="{% url 'sample:logout' %}">ログアウトする</a>
+    {% else %}
+    <a href="{% url 'sample:login' %}">ログイン</a>
+    <a href="{% url 'sample:signup' %}">アカウント作成</a>
+    {% endif %}
+  </body>
+</html>
