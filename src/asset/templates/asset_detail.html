@@ -8,6 +8,7 @@
 <p>{{ asset.name }}</p>
 <p>{{ asset.price }}</p>
 <p>{{ asset.text }}</p>
+<a href="{% url 'asset:asset_update' asset.pk %}">編集</a>
 <a href="{% url 'asset:asset_index' %}">戻る</a>
 </body>
 </html>
