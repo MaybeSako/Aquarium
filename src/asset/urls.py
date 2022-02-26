@@ -8,4 +8,5 @@ urlpatterns = [
     re_path('list/', views.AssetListView.as_view(), name='asset_list'),
     re_path('test/', views.index, name='asset_index'),
     path('detail/<uuid:pk>/', views.AssetDetailView.as_view(), name='asset_detail'),  #re_pathだとうまくできない
+    path('update/<uuid:pk>/', views.AssetUpdateView.as_view(), name='asset_update'), 
 ]

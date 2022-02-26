@@ -7,8 +7,10 @@
 <body>
 {% for asset in asset_list %}
 <p>
-    {{ asset.name }}
-    {{ asset.id }}
+    --------------------- <br>
+    {{ asset.name }} <br>
+    {{ asset.price }} <br>
+    {{ asset.text }}
     <a href="{% url 'asset:asset_detail' asset.pk %}">{{ asset.id }}</a>
 </p>
 {% endfor %}
