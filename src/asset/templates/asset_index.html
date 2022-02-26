@@ -11,6 +11,7 @@
     {% endblock header %}
 
   <body style="background-color: rgb(48, 51, 56); color: white">
+    <h1>Asset App by Django</h1>
     {% if user.id  %}
     <p>ログインしました．</p>
     <p>こんにちは，{{ user.username }}さん</p>
@@ -19,5 +20,7 @@
     <a href="{% url 'sample:login' %}">ログイン</a>
     <a href="{% url 'sample:signup' %}">アカウント作成</a>
     {% endif %}
+    <h2><a href="{% url 'asset:asset_create' %}">日記の投稿</a></h2>
+    <h2><a href="{% url 'asset:asset_list' %}">日記の一覧</a></h2>
   </body>
 </html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for asset in asset_list %}
+<p>
+    {{ asset.name }}
+    {{ asset.id }}
+    <a href="{% url 'asset:asset_detail' asset.pk %}">{{ asset.id }}</a>
+</p>
+{% endfor %}
+<a href="{% url 'asset:asset_index' %}">戻る</a>
+</body>
+</html>
