@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, TemplateView, ListView, DetailView, UpdateView
+from django.views.generic import CreateView, TemplateView, ListView, DetailView, UpdateView, DeleteView
 from django.utils import timezone
 
 from .forms import AssetForm
@@ -38,3 +38,8 @@ class AssetUpdateView(UpdateView):
         asset.updated_at = timezone.now()
         asset.save()
         return super().form_valid(form)
+
+class AssetDeleteView(DeleteView):
+    template_name = 'asset_delete.html'
+    model = Asset
+    success_url = reverse_lazy('asset:asset_list')

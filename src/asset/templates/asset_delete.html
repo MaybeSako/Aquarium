@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Asset</title>
+</head>
+<body>
+<h1>日記の削除</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>{{ asset.name }} by {{ asset.artist }} を削除します</p>
+    <input type="submit" value="削除">
+</form>
+</body>
+</html>
