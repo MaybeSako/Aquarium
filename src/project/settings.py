@@ -82,12 +82,15 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'django_local',
-    'USER': 'django_user',
-    'PASSWORD': 'secret',
-    'HOST': 'db',
-    'POST': 3306
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_local',
+        # 'TEST': {
+        #     'NAME':'mytestdb'
+        # },
+        'USER': 'django_user',
+        'PASSWORD': 'secret',
+        'HOST': 'db',
+        'POST': 3306
     }
 }
 
